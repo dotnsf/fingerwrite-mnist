@@ -1,0 +1,24 @@
+{
+    "name": "fingerwrite-mnist",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "basic-auth-connect": "1.0.x",
+        "body-parser": "^1.17.2",
+        "btoa": "1.2.1",
+        "canvas": "1.6.10",
+        "cfenv": "~1.0.0",
+        "easyimage": "2.1.0",
+        "ejs": "^2.3.4",
+        "express": "4.1.x",
+        "multer": "^1.1.0",
+        "request": "2.85.0",
+        "xmlhttprequest": "1.8.0"
+    },
+    "repository": {},
+    "engines": {
+        "node": "4.x"
+    }
+}
