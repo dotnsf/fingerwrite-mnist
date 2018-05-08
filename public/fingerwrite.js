@@ -55,7 +55,7 @@ $(function(){
 
     if( mouse.isDrawing ){
       ctx.beginPath();
-      ctx.lineWidth = 5;
+      ctx.lineWidth = 20;
       ctx.moveTo( mouse.startX, mouse.startY );
       ctx.lineTo( mouse.x, mouse.y );
       ctx.strokeStyle = mouse.color;

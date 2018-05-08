@@ -23,11 +23,8 @@ https://qiita.com/ishida330/items/b093439a1646eba0f7c6
 
     - exports.wml_password: **password** value of service credential information in IBM Watson Machine Learning service instance
 
-    - ![IBM Watson Machine Learning](http://livedoor.bbgimg.jp/dotnsf/imgs/6/8/68efa162.png)
-
     - exports.ws_endpoint: **Scoring End-point** from IBM Watson Studio service instance
 
-    - ![IBM Watson Studio](http://livedoor.bbgimg.jp/dotnsf/imgs/1/9/190f378d.png)
 
 - Install dependencies
 
