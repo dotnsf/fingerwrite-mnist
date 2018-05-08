@@ -114,7 +114,7 @@ function getPredictions( filepath ){
         payload = JSON.stringify( payload );
 
         apiGet( settings.wml_url, settings.wml_username, settings.wml_password, function ( res ){
-          let parsedGetResponse;
+          var parsedGetResponse;
           try{
             parsedGetResponse = JSON.parse( this.responseText );
           }catch( ex ){
@@ -126,7 +126,7 @@ function getPredictions( filepath ){
             const wmlToken = "Bearer " + token;
 
             apiPost( scoring_url, wmlToken, payload, function (resp) {
-              let parsedPostResponse;
+              var parsedPostResponse;
               try{
                 parsedPostResponse = JSON.parse(this.responseText);
               } catch (ex) {
