@@ -133,7 +133,7 @@ function searchChar(){
     processData: false,
     success: function( data, dataType ){
       data = JSON.parse( data );
-      //console.log( data );
+      console.log( data );
       if( data.status ){
         var values = data.result.values[0];
         var max = 0.0;
