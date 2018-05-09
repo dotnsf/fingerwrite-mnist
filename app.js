@@ -86,17 +86,18 @@ function getPredictions( filepath ){
         for( var y = 0; y < imagedata.height; y ++ ){
           var line = [];
           for( var x = 0; x < imagedata.width; x ++ ){
-            var idx = ( y * imagedata.width + x ) + 4;
+            var idx = ( y * imagedata.width + x ) * 4;
             var R = imagedata.data[idx];
             var G = imagedata.data[idx+1];
             var B = imagedata.data[idx+2];
             var A = imagedata.data[idx+3];
 
-            R = 256 - R;
-            G = 256 - G;
-            B = 256 - B;
+            R = 255 - R;
+            G = 255 - G;
+            B = 255 - B;
 
-            var avg = ( R + G + B ) / ( 3.0 * 256.0 );
+            var avg = ( R + G + B ) / ( 3.0 * 255.0 );
+            avg = Math.floor( avg * 100 ) / 100.0;
             var v = [ avg ];
             line.push( v );
           }
@@ -176,6 +177,3 @@ function apiPost(scoring_url, token, payload, loadCallback, errorCallback){
 var port = appEnv.port || 3000;
 app.listen( port );
 console.log( "server starting on " + port + " ..." );
-
-
-

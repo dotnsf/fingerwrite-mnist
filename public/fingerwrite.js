@@ -24,7 +24,7 @@ $(function(){
 
     if( mouse.isDrawing ){
       ctx.beginPath();
-      ctx.lineWidth = 20;
+      ctx.lineWidth = 30;
       ctx.moveTo( mouse.startX, mouse.startY );
       ctx.lineTo( mouse.x, mouse.y );
       ctx.strokeStyle = mouse.color;
@@ -133,18 +133,18 @@ function searchChar(){
     processData: false,
     success: function( data, dataType ){
       data = JSON.parse( data );
-      console.log( data );
+      console.log( data.result.values[0] );
       if( data.status ){
         var values = data.result.values[0];
         var max = 0.0;
         var idx = -1;
-        for( i = 0; i < values.length; i ++ ){
+        for( var i = 0; i < values.length; i ++ ){
           if( values[i] > max ){
             max = values[i];
             idx = i;
           }
         }
-        
+
         if( idx > -1 ){
           alert( idx + '(' + max + ')' );
         }
@@ -166,4 +166,3 @@ function waited(){
     //searchChar();
   }
 }
-
