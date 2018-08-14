@@ -132,6 +132,7 @@ function searchChar(){
     contentType: false,
     processData: false,
     success: function( data, dataType ){
+      //console.log( data );
       data = JSON.parse( data );
       console.log( data.result.values[0] );
       if( data.status ){
