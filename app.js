@@ -96,7 +96,8 @@ function getPredictions( filepath ){
             G = 255 - G;
             B = 255 - B;
 
-            var avg = ( R + G + B ) / ( 3.0 * 255.0 );
+            //var avg = ( R + G + B ) / ( 3.0 * 255.0 );
+            var avg = ( R + G + B ) / 3.0;  //. fixed for spec change.
             avg = Math.floor( avg * 100 ) / 100.0;
             var v = [ avg ];
             line.push( v );
