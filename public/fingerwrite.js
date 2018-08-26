@@ -147,7 +147,8 @@ function searchChar(){
         }
 
         if( idx > -1 ){
-          alert( idx + '(' + max + ')' );
+          //alert( idx + '(' + max + ')' );
+          alert( idx + '' );
         }
       }
     },
