@@ -134,21 +134,29 @@ function searchChar(){
     success: function( data, dataType ){
       //console.log( data );
       data = JSON.parse( data );
-      console.log( data.result.values[0] );
       if( data.status ){
-        var values = data.result.values[0];
-        var max = 0.0;
-        var idx = -1;
-        for( var i = 0; i < values.length; i ++ ){
-          if( values[i] > max ){
-            max = values[i];
-            idx = i;
+        if( data.result && data.result.values && data.result.values.length ){
+          console.log( data.result.values );
+          var values = data.result.values[0];
+          var max = 0.0;
+          var idx = -1;
+          for( var i = 0; i < values.length; i ++ ){
+            if( values[i] > max ){
+              max = values[i];
+              idx = i;
+            }
           }
-        }
 
-        if( idx > -1 ){
-          //alert( idx + '(' + max + ')' );
-          alert( idx + '' );
+          if( idx > -1 ){
+            //alert( idx + '(' + max + ')' );
+            alert( idx + '' );
+          }
+        }else if( data.errors && data.errors.length ){
+          console.log( data.errors );
+          alert( data.errors[0].message );
+        }else{
+          console.log( data );
+          alert( 'unknown error' );
         }
       }
     },
