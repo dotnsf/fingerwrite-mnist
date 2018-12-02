@@ -49,8 +49,10 @@ $(function(){
   canvas.addEventListener( "touchmove", function( e ){
     var t = e.changedTouches[0];
     var rect = t.target.getBoundingClientRect();
-    mouse.x = t.pageX - rect.left - borderWidth;
-    mouse.y = t.pageY - rect.top - borderWidth;
+    //mouse.x = t.pageX - rect.left - borderWidth;
+    //mouse.y = t.pageY - rect.top - borderWidth;
+    mouse.x = ( isAndroid() ? t.pageX : e.pageX ) - rect.left - borderWidth;
+    mouse.y = ( isAndroid() ? t.pageY : e.pageY ) - rect.top - borderWidth;
     waiting = false;
 
     if( mouse.isDrawing ){
@@ -175,4 +177,8 @@ function waited(){
     waiting = false;
     //searchChar();
   }
+}
+
+function isAndroid(){
+  return ( navigator.userAgent.indexOf( 'Android' ) > 0 );
 }
