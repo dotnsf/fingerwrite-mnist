@@ -81,9 +81,15 @@ $(function(){
   });
 
   //. スクロール禁止
+  /*
   $(window).on( 'touchmove.noScroll', function( e ){
     e.preventDefault();
   });
+  */
+  var movefun = function( event ){
+    event.preventDefault();
+  }
+  window.addEventListener( 'touchmove', movefun, { passive: false } );
 
   resetCanvas();
 });
